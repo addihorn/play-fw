@@ -1,15 +1,15 @@
 
-echo "Hello World"
+//echo "Hello World"
 
-/*
+
 stage("Run & Test Web-Server") {
     parallel 
-        run: {
+        "run": {
             sh "sbt run"
         }, 
-        test: {
+        "test": {
             sh "curl localhost:9000"
         }
 }
 
-*/
+
