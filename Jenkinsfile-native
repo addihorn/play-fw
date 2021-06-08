@@ -1,16 +1,18 @@
 
 //echo "Hello World"
-
-
 stage("Run & Test Web-Server") {
     parallel 'run': {
         stage("Run WebServer") {
-            sh "sbt run"
+            node('master') {
+                sh "sbt run"
+            }
         }
             
     }, 'test': {
         stage("Test Web Server") {
-            sh "curl localhost:9000"
+            node('master') {
+                sh "curl localhost:9000"
+            }
         }            
     }
 }
