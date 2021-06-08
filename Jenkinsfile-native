@@ -1,9 +1,9 @@
 stage('Run & Test Web-Server') {
     parallel 
-        'Start Web-Server': {
+        run: {
             sh "sbt run"
         }, 
-        'Test Web-Server': {
+        test: {
             sh "curl localhost:9000"
         }
 }
