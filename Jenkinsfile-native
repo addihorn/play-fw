@@ -3,13 +3,16 @@
 
 
 stage("Run & Test Web-Server") {
-    parallel 
-        "run": {
+    parallel 'run': {
+        stage("Run WebServer") {
             sh "sbt run"
-        }, 
-        "test": {
-            sh "curl localhost:9000"
         }
+            
+    }, 'test': {
+        stage("Test Web Server") {
+            sh "curl localhost:9000"
+        }            
+    }
 }
 
 
