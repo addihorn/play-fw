@@ -1,4 +1,8 @@
-stage('Run & Test Web-Server') {
+
+echo "Hello World"
+
+/*
+stage("Run & Test Web-Server") {
     parallel 
         run: {
             sh "sbt run"
@@ -7,3 +11,5 @@ stage('Run & Test Web-Server') {
             sh "curl localhost:9000"
         }
 }
+
+*/
